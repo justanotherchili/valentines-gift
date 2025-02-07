@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Will</title>
+  </head>
+  <body>
+    <h1>Hello my Bubu!!</h1>
+    <div class="gif-container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="10014143842461151933"
+        data-share-method="host"
+        data-aspect-ratio="1"
+        data-width="100%"
+      >
+        <a
+          href="https://tenor.com/view/dudu-dudu-bubu-dudu-bubu-love-bubu-dudu-love-bubu-love-dudu-gif-10014143842461151933"
+          >Dudu Dudu Bubu Sticker</a
+        >
+        from <a href="https://tenor.com/search/dudu-stickers">Dudu Stickers</a>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      async
+      src="https://tenor.com/embed.js"
+    ></script>
+    <p>
+      It's been around 4 years since we've met and I've still never seen you go
+      for a poop...
+    </p>
+    <p>Do you wanna guess what this timer means?</p>
+
+    <div id="timer">Loading..</div>
+    <div id="message" style="display: none"></div>
+    <button onclick="showMessage('Bruh.. you need to go poop')">
+      Time since you last pooped
+    </button>
+    <a href="correct.html"
+      ><button>How long we've been in a relationship</button></a
+    >
+    <button onclick="showMessage('GET SOME SLEEEP')">
+      When you last got a good sleep
+    </button>
+    <script>
+      function updateTimer() {
+        let startDate = new Date("2023-08-22T21:59:00");
+        let now = new Date();
+        let diff = Math.floor((now - startDate) / 1000);
+
+        let days = Math.floor(diff / (60 * 60 * 24));
+        let hours = Math.floor((diff % (60 * 60 * 24)) / (60 * 60));
+        let minutes = Math.floor((diff % (60 * 60)) / 60);
+        let seconds = diff % 60;
+
+        document.getElementById(
+          "timer"
+        ).innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      setInterval(updateTimer, 1000);
+      updateTimer();
+
+      let messageTimeout;
+
+      function showMessage(message) {
+        const messageDiv = document.getElementById("message");
+        messageDiv.innerText = message;
+        messageDiv.style.display = "block";
+
+        clearTimeout(messageTimeout);
+
+        messageTimeout = setTimeout(() => {
+          messageDiv.style.display = "none";
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

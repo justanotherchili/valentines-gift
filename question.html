@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="question.css" rel="stylesheet" />
+    <title>My..</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>So will you be my Valentine? YOU CAN'T SAY NO MUAHAHAHAHA</h1>
+
+      <div class="gif-container">
+        <div
+          class="tenor-gif-embed"
+          data-postid="13801352676628677702"
+          data-share-method="host"
+          data-aspect-ratio="0.708835"
+          data-width="100%"
+        >
+          <a
+            href="https://tenor.com/view/bubu-dudu-dudu-bubu-bubu-dudu-love-gif-13801352676628677702"
+            >Bubu Dudu Bubu Dudu Love GIF</a
+          >from
+          <a href="https://tenor.com/search/bubu+dudu-gifs">Bubu Dudu GIFs</a>
+        </div>
+      </div>
+
+      <div class="buttons-container">
+        <a href="./success.html"
+          ><button id="yes-btn" class="button yes-button">Yes</button></a
+        >
+        <button id="no-btn" class="button no-button">No</button>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      async
+      src="https://tenor.com/embed.js"
+    ></script>
+
+    <script>
+      function moveButton() {
+        const noButton = document.getElementById("no-btn");
+        const yesButton = document.getElementById("yes-btn");
+
+        const noButtonRect = noButton.getBoundingClientRect();
+        const noButtonX = noButtonRect.left;
+        const noButtonY = noButtonRect.top;
+
+        const randomX =
+          Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const randomY =
+          Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+        noButton.style.position = "absolute";
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+
+        yesButton.style.position = "absolute";
+        yesButton.style.left = noButtonX + "px";
+        yesButton.style.top = noButtonY + "px";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const yesButton = document.getElementById("yes-btn");
+        const noButton = document.getElementById("no-btn");
+
+        yesButton.style.position = "relative";
+        noButton.style.position = "relative";
+      });
+
+      document.getElementById("no-btn").addEventListener("click", moveButton);
+    </script>
+  </body>
+</html>
